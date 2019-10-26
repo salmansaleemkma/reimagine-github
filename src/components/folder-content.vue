@@ -5,8 +5,8 @@
       <div class="border border-blue-500">
         <div class="bg-gray-100 border p-2 hover:bg-gray-300" v-for="file in files" v-bind:key='file.name'>
           <p @click="openContent(file)">
-            <span v-if="file.type == 'file'">file</span>
-            <span v-else>dir</span>
+            <span class="inline-block w-5" v-if="file.type == 'file'"><img src="../assets/icon-file.png" alt=""></span>
+            <span class="inline-block w-6" v-else><img src="../assets/icon-folder.png" alt=""></span>
             {{file.name}}
           </p>
         </div>
