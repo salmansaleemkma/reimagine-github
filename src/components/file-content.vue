@@ -1,7 +1,10 @@
 <template>
   <div class="p-5 m-5">
-    <h1 class="text-xl">{{this.repo}} / {{this.file.path}}</h1>
-    <div class="border border-blue-500 p-5 bg-gray-100">
+    <div class="flex">
+      <h1 class="w-5/6 text-xl">{{this.repo}} / {{this.file.path}}</h1>
+      <a class="w-1/6 text-center bg-blue-800 font-bold text-white p-2 m-1 rounded" :href="file.download_url">Download</a>
+    </div>
+    <div class="border border-blue-500 p-5 bg-gray-100 overflow-scroll">
       <vue-markdown :source="fileContent"></vue-markdown>
     </div>
   </div>
