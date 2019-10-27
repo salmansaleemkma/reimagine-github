@@ -17,16 +17,11 @@
       axios.get(url_link).then(response => {
         this.repo = response.data
       })
-      axios.get(url_link + '/contents/').then(response => {
-        this.contents = response.data
-      })
     },
     data() {
       return {
         username: this.$route.params.username,
         repo_name: this.$route.params.repo,
-        contents: [],
-        content: '',
         repo: {}
       }
     }
