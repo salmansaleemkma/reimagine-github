@@ -23,13 +23,12 @@
 </template>
 
 <script>
-  import axios from 'axios'
   export default {
     beforeMount: function() {
-      axios.get('https://api.github.com/users/' + this.$route.params.username).then(response => {
+      this.$api.get('users/' + this.$route.params.username).then(response => {
         this.user = response.data
       })
-      axios.get('https://api.github.com/users/' + this.$route.params.username + '/repos').then(response => {
+      this.$api.get('users/' + this.$route.params.username + '/repos').then(response => {
         this.repos = response.data
       })
       this.showProfile = true

@@ -18,7 +18,6 @@
   </div>
 </template>
 <script>
-  import axios from 'axios'
   export default {
     beforeMount: function() {
         this.getContent()
@@ -28,7 +27,7 @@
         if (this.$route.name == 'user-repo-page') {
           this.path = ''
         }
-        axios.get('https://api.github.com/repos/' + this.username + '/' + this.repo + '/contents/' + this.path).then(response => {
+        this.$api.get('repos/' + this.username + '/' + this.repo + '/contents/' + this.path).then(response => {
           this.files = response.data
         })
       },

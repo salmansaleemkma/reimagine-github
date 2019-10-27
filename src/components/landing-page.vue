@@ -11,7 +11,7 @@
     methods:{
       setUsername: function(){
         if(this.username != ''){
-          return this.$emit('get-username', this.username)
+          return this.$emit('set-username', this.username)
         }
       }
     },

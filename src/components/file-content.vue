@@ -14,7 +14,6 @@
     Base64
   } from 'js-base64';
   import VueMarkdown from 'vue-markdown'
-  import axios from 'axios'
   export default {
     components: {
       VueMarkdown
@@ -24,7 +23,7 @@
     },
     methods:{
       getContent: function(){
-        axios.get('https://api.github.com/repos/' + this.username + '/' + this.repo + '/contents/' + this.path).then(response => {
+        this.$api.get('repos/' + this.username + '/' + this.repo + '/contents/' + this.path).then(response => {
           this.file = response.data
         })
       }

@@ -7,7 +7,7 @@
         <router-link to='/'><button class="bg-blue-800 font-bold text-white p-3 rounded" type="button" name="button">Explore Another User</button></router-link>
       </div>
     </div>
-    <router-view v-on:get-username="setUsername" v-bind:key="this.$route.fullPath">Loading...</router-view>
+    <router-view v-on:set-username="setUsername" v-bind:key="this.$route.fullPath">Loading...</router-view>
     <div v-if="showError">
       {{error}}
     </div>
@@ -15,12 +15,11 @@
 </template>
 
 <script>
-  import axios from 'axios'
   export default {
     name: 'app',
     methods: {
       getUser: function() {
-        return axios.get('https://api.github.com/users/' + this.username).then(() => {
+        return this.$api.get('users/' + this.username).then(() => {
           this.viewProfile()
         }).catch(error => this.catchError(error))
       },
@@ -28,9 +27,9 @@
         this.error = error.response.statusText
         this.showError = true
       },
-      setUsername: function(value) {
+      setUsername: function(username) {
         this.showError = false
-        this.username = value
+        this.username = username
         this.getUser()
       },
       viewProfile: function() {
