@@ -25,13 +25,21 @@
 <script>
   export default {
     beforeMount: function() {
-      this.$api.get('users/' + this.$route.params.username).then(response => {
-        this.user = response.data
-      })
-      this.$api.get('users/' + this.$route.params.username + '/repos').then(response => {
-        this.repos = response.data
-      })
+      this.getUser()
+      this.getRepos()
       this.showProfile = true
+    },
+    methods: {
+      getUser: function() {
+        this.$api.get('users/' + this.$route.params.username).then(response => {
+          this.user = response.data
+        })
+      },
+      getRepos: function() {
+        this.$api.get('users/' + this.$route.params.username + '/repos').then(response => {
+          this.repos = response.data
+        })
+      }
     },
     data() {
       return {
