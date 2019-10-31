@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="px-5 mt-1 shadow max-w-5xl mx-auto">
-    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <div class="flex">
       <h1 class="w-3/4 p-5 font-bold text-2xl">Reimagine Github</h1>
       <div class="w-1/4 text-right" v-if="this.$route.fullPath != '/'">
@@ -53,7 +52,8 @@
 
 <style>
   @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-*{
-  font-family: 'Muli', sans-serif;
-}
+
+  * {
+    font-family: 'Muli', sans-serif;
+  }
 </style>

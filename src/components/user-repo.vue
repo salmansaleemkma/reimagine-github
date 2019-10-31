@@ -26,6 +26,6 @@
     }
   }
 </script>
-<style media="screen">
+<style>
 
 </style>

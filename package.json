@@ -51,6 +51,7 @@
   },
   "postcss": {
     "plugins": {
+      "tailwindcss": "tailwind.js",
       "autoprefixer": {}
     }
   },
@@ -59,6 +60,9 @@
     "last 2 versions"
   ],
   "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": ["**/*.{js,vue}", "!**/node_modules/**"],
+    "coverageReporters": ["html", "text-summary"],
     "moduleFileExtensions": [
       "js",
       "json",

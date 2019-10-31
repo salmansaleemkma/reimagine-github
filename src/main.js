@@ -3,12 +3,13 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import router from './router/index.js'
 import axios from 'axios'
+import './assets/css/styles.css'
 
 Vue.use(VueRouter)
 Vue.config.productionTip = false
 
 Vue.use({
-    install (Vue) {
+  install(Vue) {
     Vue.prototype.$api = axios.create({
       baseURL: 'https://api.github.com/'
     })
