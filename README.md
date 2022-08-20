@@ -1,5 +1,5 @@
 # reimagine-github
-
+A simple web application to explore github repositories.
 ## Project setup
 ```
 npm install
